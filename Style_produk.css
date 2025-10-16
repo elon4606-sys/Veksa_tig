@@ -83,7 +83,7 @@ body {
 
 .hero-text {
   flex: 1;
-  min-width: 300px;
+  /* min-width: 300px; */
 }
 
 .hero-title {
@@ -326,7 +326,7 @@ body {
   .hero-image img {
     width: 80%;
     max-width: 300px;
-    margin-left: -45px;
+    margin-left: -50px;
     display: block;
   }
 
