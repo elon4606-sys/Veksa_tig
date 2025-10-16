@@ -8,16 +8,25 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="Toko Online.html" class="logo">Velsa.<span class="logo-accent">Tig</span></a>
-      <nav class="main-nav">
-        <a href="#hero-section">Home</a>
-        <a href="#shop-section">Shop</a>
-        <a href="#about-section">About</a>
-      </nav>
+  <header class="header">
+  <div class="header-container">
+    <h1 class="logo">Velsa.Tig</h1>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#">Home</a>
+      <a href="#">New Arrivals</a>
+      <a href="#">About</a>
+    </nav>
+
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-user"></i>
     </div>
-  </header>
+
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </div>
+</header>
+
 
   <!-- HERO SECTION -->
   <section id="hero-section" class="hero-section">
@@ -27,7 +36,7 @@
         <p class="hero-subtitle">Modern New Arrival</p>
       </div>
       <div class="hero-image">
-        <img src="bg.jpg" alt="Model" />
+        <img src="Group 11.png" alt="Model" />
       </div>
     </div>
   </section>
@@ -98,22 +107,13 @@
   </section>
 <!-- Tombol Scroll Up -->
 <button id="scrollUpBtn" title="Kembali ke atas">↑</button>
-
 <script>
-  // Tampilkan tombol saat di-scroll ke bawah
-  window.onscroll = function() {
-    const btn = document.getElementById("scrollUpBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
 
-  // Aksi klik tombol
-  document.getElementById("scrollUpBtn").onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("active");
+  });
 </script>
 </body>
 </html>
