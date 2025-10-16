@@ -29,6 +29,7 @@ body {
     padding: 40px 20px;
     background-color: #fff;
     border-radius: 10px;
+    flex-wrap: wrap
 }
 
 .thumbnails {

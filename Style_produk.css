@@ -103,6 +103,7 @@ body {
 }
 
 .hero-image img {
+  padding: 0px;
   width: 450px;
   border-radius: 12px;
   .hero-section {
@@ -294,7 +295,7 @@ body {
   }
 
   .header-container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
   }
@@ -325,14 +326,13 @@ body {
   .hero-image img {
     width: 80%;
     max-width: 300px;
-    margin: 0 auto;
+    margin-left: -45px;
     display: block;
   }
 
   /* Shop Section */
   .product-grid {
     gap: 15px;
-    padding: 0 10px;
   }
 
   .product-item img {
@@ -483,7 +483,7 @@ body {
   .hero-box {
     flex-direction: column;
     text-align: center;
-    padding: 40px;
+    /* padding: 40px; */
   }
 
   .hero-title {
@@ -504,7 +504,7 @@ body {
   .hero-box {
     flex-direction: column;
     text-align: center;
-    padding: 30px 25px;
+    /* padding: 30px 25px; */
   }
 
   .hero-title {
