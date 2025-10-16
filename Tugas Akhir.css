@@ -1,0 +1,435 @@
+/* =========================================================
+   RESET & GLOBAL STYLES
+========================================================= */
+* {
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #222;
+    scroll-behavior: smooth;
+}
+
+.container {
+    /* width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; */
+    width: 100%;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.site-header {
+    background-color: #e3e3e3;
+    opacity: .8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.main-nav a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 60px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #666;
+}
+/* ===== HEADER TAMBAHAN ===== */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* SEARCH */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.search-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.search-input {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 10px;
+  width: 0;
+  opacity: 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+}
+
+.search-container.active .search-input {
+  width: 200px;
+  opacity: 1;
+}
+
+/* LOGIN ICON */
+.login-btn img {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.login-btn img:hover {
+  transform: scale(1.1);
+}
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero-section {
+    background-image: url("bg4.jpg"); /* ganti dengan nama file gambarmu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    display: flex;
+    position: relative;
+}
+
+
+.hero-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.hero-text {
+    flex: 1;
+    color: #fff;
+    padding-right: 20px;
+    margin-left: 25px;
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 90px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.kata-kata {
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.cta-button {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #d9d9d9;
+    color: #111;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.model-image {
+    width: 565px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================================================
+   ARRIVALS SECTION
+========================================================= */
+.arrivals-section {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.category-nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.category-nav a {
+    color: #222;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.category-nav a:hover {
+    color: #606060;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.product-card {
+    width: 320px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Agar semua gambar sama ukuran */
+.product-image {
+    width: 100%;
+    height: 380px;            /* tambahkan tinggi tetap */
+    object-fit: cover;        /* biar gambar tidak melar */
+    border-radius: 12px 12px 0 0;
+}
+
+.product-name {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+.about-section {
+    background-color: #d6d4d4;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-section .section-title {
+    margin-bottom: 30px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-content strong {
+    color: #000;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.site-footer {
+  background-color: #1d1d1d;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-desc {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #555555;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.payment-methods {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.payment-methods img {
+  width: 40px;
+  height: auto;
+  /* background-color: #000000;  */
+  /* border-radius: 5px; */
+  padding: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 15px 0;
+  color: #aaa;
+  font-size: 13px;
+}
+/* Tombol Scroll Up */
+#scrollUpBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #606060;
+  color: #000;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#scrollUpBtn:hover {
+  background-color: #cdcdcd;
+  transform: scale(1.1);
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .payment-methods {
+    justify-content: center;
+  }
+}

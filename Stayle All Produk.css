@@ -1,0 +1,288 @@
+/* ====== RESET & BASE ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("bg4.jpg"); /* Ganti dengan nama file gambarmu */
+  background-size: cover;       /* Agar gambar memenuhi layar */
+  background-position: center;  /* Posisi gambar di tengah */
+  background-repeat: no-repeat; /* Supaya gambar tidak berulang */
+  background-attachment: fixed; /* Efek paralaks saat di-scroll */
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ====== HEADER ====== */
+.site-header {
+  background: #111;
+  color: #fff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo-accent {
+  color: #a7a7a7;
+}
+
+.main-nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: #a7a7a7;
+}
+
+/* ====== HERO SECTION ====== */
+.hero-section {
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-box {
+  background: rgba(122, 122, 122, 0.451);
+  backdrop-filter: blur(6px);
+  width: 90%;
+  max-width: 1200px;
+  padding: 0px 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: #a7a7a7;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.hero-image img {
+  width: 450px;
+  border-radius: 12px;
+  .hero-section {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.hero-section:hover {
+  filter: grayscale(0%);
+}
+
+}
+
+/* ====== SECTION BOX ====== */
+.section-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+}
+
+/* =========================================================
+   COMING SOON SECTION (Box Gambar Tanpa Teks)
+========================================================= */
+.coming-soon-section {
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-box1 {
+  background-image: url("Group\ 4.png"); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1200px;
+  height: 500px;
+  padding: 40px;
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-box1:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* =========================================================
+   SHOP SECTION
+========================================================= */
+.shop-section {
+
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image-box {
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 15px rgba(255, 206, 145, 0.2);
+}
+
+.product-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-price {
+  font-size: 15px;
+  color: #000000;
+  font-weight: 200;
+  margin-top: 12px;
+}
+
+
+/* ==ABOUT US SECTION== */
+.about-section {
+  background: #f9f9f9;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-box {
+  width: 90%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 40px;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.about-title span {
+  color: #000000;
+}
+
+.about-text {
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+/* Tombol Scroll Up */
+#scrollUpBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #626262;
+  color: #000;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+#scrollUpBtn:hover {
+  background-color: #cdcdcd;
+  transform: scale(1.1);
+}
