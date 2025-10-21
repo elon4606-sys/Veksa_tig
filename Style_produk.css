@@ -1,3 +1,4 @@
+
 /* ====== RESET & BASE ====== */
 * {
   margin: 0;
@@ -130,35 +131,6 @@ body {
 }
 
 /* =========================================================
-   COMING SOON SECTION (Box Gambar Tanpa Teks)
-========================================================= */
-.coming-soon-section {
-  padding: 120px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section-box1 {
-  background-image: url("Group 4.png"); 
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 1200px;
-  height: 500px;
-  padding: 40px;
-  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.15);
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.section-box1:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
-}
-
-/* =========================================================
    SHOP SECTION
 ========================================================= */
 .shop-section {
@@ -218,6 +190,36 @@ body {
   font-weight: 200;
   margin-top: 12px;
 }
+/* =========================================================
+   COMING SOON SECTION (Box Gambar Tanpa Teks)
+========================================================= */
+.coming-soon-section {
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-box1 {
+  background-image: url("Group 4.png"); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1200px;
+  height: 500px;
+  padding: 40px;
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-box1:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+
 
 
 /* ==ABOUT US SECTION== */

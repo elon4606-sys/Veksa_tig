@@ -197,6 +197,28 @@ body {
     height: auto;
     object-fit: contain;
 }
+
+/* === HERO SLIDER === */
+.hero-image.slider {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.hero-image .slide {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  border-radius: 10px;
+}
+
+.hero-image .slide.active {
+  opacity: 1;
+}
+
 /* =========================================================
    ARRIVALS SECTION
 ========================================================= */
