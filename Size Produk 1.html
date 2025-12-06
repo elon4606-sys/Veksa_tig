@@ -158,47 +158,6 @@
                             Reserved</p>
                         <p> Jl.Jakarta Timur, Gedong No 21</p>
                     </footer>
-                    <script>
-  // === Fitur Simpan ke Cart ===
-  document.querySelector(".add-to-cart").addEventListener("click", function() {
-    const productName = document.querySelector(".product-details h2").textContent;
-    const price = document.querySelector(".price").textContent;
-    const quantity = document.querySelector(".quantity-selector input").value;
-    const size = document.querySelector('input[name="size"]:checked')
-      ? document.querySelector('input[name="size"]:checked").value')
-      : "Belum dipilih";
-
-    // Data produk
-    const product = {
-      name: productName,
-      price: price,
-      quantity: parseInt(quantity),
-      size: size,
-    };
-
-    // Ambil data keranjang sebelumnya
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert(`🛒 ${productName} (Size: ${size}) berhasil ditambahkan ke keranjang!`);
-  });
-
-  // === Fitur Quantity (+ dan -) ===
-  const qtyInput = document.querySelector(".quantity-selector input");
-  const btnPlus = document.querySelectorAll(".quantity-selector button")[1];
-  const btnMinus = document.querySelectorAll(".quantity-selector button")[0];
-
-  btnPlus.addEventListener("click", () => {
-    qtyInput.value = parseInt(qtyInput.value) + 1;
-  });
-
-  btnMinus.addEventListener("click", () => {
-    if (parseInt(qtyInput.value) > 1) {
-      qtyInput.value = parseInt(qtyInput.value) - 1;
-    }
-  });
-</script>
-
+                    <script src="Produk.js"></script>
                 </body>
             </html>
