@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velsa.Tig | Distro Streetwear</title>
     <link rel="stylesheet" href="Tugas Akhir.css">
+
   </head>
 
   <body>
@@ -88,41 +89,48 @@
           <div class="container">
             <h2 class="section-title">Model</h2>
             <nav class="category-nav">
-              <a href="#">Women</a>
-              <a href="#">Men</a>
+              <a href="#" id="btnWomen" class="active">Women</a>
+              <a href="#" id="btnMen">Men</a>
             </nav>
-            <div class="product-grid">
+
+            <!-- WOMEN -->
+            <div class="product-grid" id="womenGrid">
               <div class="product-card">
-                <img src="Not (5).jpg" alt="Product 1" class="product-image">
+                <img src="Not (5).jpg" class="product-image">
                 <p class="product-name">Velsa Not Like Us Tee | BOXY
                   OVERSIZED</p>
               </div>
               <div class="product-card">
-                <img src="noT (1).jpg" alt="Product 1" class="product-image">
+                <img src="noT (1).jpg" class="product-image">
                 <p class="product-name">Velsa Not Like Us Tee | BOXY
                   OVERSIZED</p>
               </div>
               <div class="product-card">
-                <img src="Not (7).jpg" alt="Product 1" class="product-image">
-                <p class="product-name">Velsa Not Like Us Tee | BOXY
-                  OVERSIZED</p>
-              </div>
-              <div class="product-card">
-                <img src="noT (2).jpg" alt="Product 1" class="product-image">
-                <p class="product-name">Velsa Not Like Us Tee | BOXY
-                  OVERSIZED</p>
-              </div>
-              <div class="product-card">
-                <img src="Not (9).jpg" alt="Product 2" class="product-image">
-                <p class="product-name">Velsa Not Like Us Tee | BOXY
-                  OVERSIZED</p>
-              </div>
-              <div class="product-card">
-                <img src="noT (3).jpg" alt="Product 3" class="product-image">
+                <img src="Not (7).jpg" class="product-image">
                 <p class="product-name">Velsa Not Like Us Tee | BOXY
                   OVERSIZED</p>
               </div>
             </div>
+
+            <!-- MEN -->
+            <div class="product-grid" id="menGrid" style="display:none;">
+              <div class="product-card">
+                <img src="putih1.png" class="product-image">
+                <p class="product-name">Velsa Not Like Us Tee | BOXY
+                  OVERSIZED</p>
+              </div>
+              <div class="product-card">
+                <img src="hitam1.png" class="product-image">
+                <p class="product-name">Velsa Not Like Us Tee | BOXY
+                  OVERSIZED</p>
+              </div>
+              <div class="product-card">
+                <img src="putih2.png" class="product-image">
+                <p class="product-name">Velsa Not Like Us Tee | BOXY
+                  OVERSIZED</p>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -252,7 +260,81 @@
     });
   </script>
 
-        <script src="CHECK.js"></script>
-      </body>
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
 
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const userData = JSON.parse(localStorage.getItem("user_aktif"));
+
+    const loginButton = document.getElementById("loginButton");
+    const userDropdown = document.getElementById("userDropdown");
+    const userName = document.getElementById("userName");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // ===============================
+    // JIKA USER SUDAH LOGIN
+    // ===============================
+    if (isLoggedIn === "true" && userData) {
+      loginButton.style.display = "none";
+      userDropdown.style.display = "inline-block";
+
+      // tampilkan username / nama
+      userName.textContent = userData.username;
+      // kalau mau nama lengkap → userData.nama
+    }
+
+    // ===============================
+    // TOGGLE DROPDOWN
+    // ===============================
+    userName.addEventListener("click", function () {
+      dropdownMenu.style.display =
+        dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // ===============================
+    // LOGOUT
+    // ===============================
+    logoutBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("user_aktif");
+      window.location.reload();
+    });
+
+    // ===============================
+    // TUTUP DROPDOWN JIKA KLIK LUAR
+    // ===============================
+    document.addEventListener("click", function (e) {
+      if (!userDropdown.contains(e.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+
+  });
+</script>
+        <script src="product.js"></script>
+        <script>
+  const btnWomen = document.getElementById("btnWomen");
+  const btnMen = document.getElementById("btnMen");
+  const womenGrid = document.getElementById("womenGrid");
+  const menGrid = document.getElementById("menGrid");
+
+  btnWomen.addEventListener("click", function (e) {
+    e.preventDefault();
+    womenGrid.style.display = "grid";
+    menGrid.style.display = "none";
+    btnWomen.classList.add("active");
+    btnMen.classList.remove("active");
+  });
+
+  btnMen.addEventListener("click", function (e) {
+    e.preventDefault();
+    menGrid.style.display = "grid";
+    womenGrid.style.display = "none";
+    btnMen.classList.add("active");
+    btnWomen.classList.remove("active");
+  });
+</script>
+      </body>
     </html>

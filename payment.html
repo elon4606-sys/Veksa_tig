@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment | Velsa.Tig</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>PAYMENT</h2>
+
+    <div id="orderSummary"></div>
+    <div class="total" id="totalPrice"></div>
+
+    <div class="payment-method">
+      <label>
+        <input type="radio" name="pay" value="transfer" checked>
+        Transfer Bank
+      </label>
+
+      <label>
+        <input type="radio" name="pay" value="ewallet">
+        E-Wallet
+      </label>
+
+      <label>
+        <input type="radio" name="pay" value="cod">
+        COD
+      </label>
+    </div>
+
+    <button id="payNowBtn" class="pay-button">Bayar Sekarang</button>
+  </div>
+
+  <!-- ================= JAVASCRIPT PAYMENT (SCOPED) ================= -->
+  <script>
+    (function () {
+      // 🔐 PROTEKSI LOGIN
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      if (isLoggedIn !== "true") {
+        alert("Silakan login terlebih dahulu!");
+        localStorage.setItem("redirectAfterLogin", "payment.html");
+        window.location.href = "login.html";
+        return;
+      }
+
+      // 💳 EVENT PAYMENT
+      const payBtn = document.getElementById("payNowBtn");
+
+      if (!payBtn) return;
+
+      payBtn.addEventListener("click", function () {
+        const selectedPay = document.querySelector('input[name="pay"]:checked').value;
+
+        if (selectedPay === "transfer" || selectedPay === "ewallet") {
+          window.location.href = "https://shopee.co.id/velsa.tig";
+        } else if (selectedPay === "cod") {
+          alert("Pembayaran COD tersedia di Shopee. Silakan lanjutkan di Shopee.");
+          window.location.href = "https://shopee.co.id/velsa.tig";
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

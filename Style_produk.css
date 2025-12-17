@@ -14,6 +14,7 @@ body {
   background-attachment: fixed; /* Efek paralaks saat di-scroll */
   color: #222;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("bg4.jpg"); /* Ganti dengan nama file gambarmu */
 }
 
 
@@ -206,7 +207,7 @@ body {
   background-position: center;
   border-radius: 20px;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1000px;
   height: 500px;
   padding: 40px;
   box-shadow: 0 5px 25px rgba(255, 255, 255, 0.15);
@@ -219,8 +220,43 @@ body {
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
 }
 
+.section-box2 {
+  background-image: url("velsa.png"); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  height: 500px;
+  padding: 40px;
+  box-shadow: 0 5px 25px #3b382d56;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
+.section-box2:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(172, 139, 40, 0.556);
+}
 
+.section-box3 {
+  background-image: url("cooming.png"); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  height: 500px;
+  padding: 40px;
+  box-shadow: 0 5px 25px #3b382d56;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-box3:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(132, 132, 98, 0.556);
+}
 
 /* ==ABOUT US SECTION== */
 .about-section {

@@ -1,30 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const form = document.getElementById("form-login");
+  const username = document.getElementById("login_username").value.trim();
+  const password = document.getElementById("login_password").value.trim();
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        const username = document.getElementById("login_username").value.trim();
-        const password = document.getElementById("login_password").value.trim();
+  const user = users.find(
+    u => u.username === username && u.password === password
+  );
 
-        // Ambil database user lokal
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+  if (user) {
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("user_aktif", JSON.stringify(user));
 
-        // Cek kecocokan
-        const user = users.find(u => u.username === username && u.password === password);
-
-        if (!user) {
-            alert("Username atau password salah!");
-            return;
-        }
-
-        // Simpan sebagai user aktif
-        localStorage.setItem("user_aktif", JSON.stringify(user));
-
-        alert("Login berhasil!");
-
-        // Redirect dashboard
-        window.location.href = "index.html";
-    });
+    const redirect = localStorage.getItem("redirectAfterLogin");
+    if (redirect) {
+      localStorage.removeItem("redirectAfterLogin");
+      window.location.href = redirect;
+    } else {
+      window.location.href = "index.html";
+    }
+  } else {
+    alert("Username atau password salah!");
+  }
 });

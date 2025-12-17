@@ -7,11 +7,12 @@
 
 /* Background */
 body {
-    background: linear-gradient(135deg, #626262, #454545);
+    background-image: url(bg1.jpg);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Container */

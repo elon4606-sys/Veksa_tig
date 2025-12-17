@@ -5,6 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velsa.Tig | Distro Streetwear</title>
   <link rel="stylesheet" href="Style_produk.css">
+
+  <style>
+  /* ===== USER HEADER ===== */
+#userHeader {
+  margin-left: 10px;
+}
+
+#userNameHeader {
+  color: white;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#userNameHeader:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ===== DROPDOWN ===== */
+#userDropdownMenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 36px;
+  background: #111;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 120px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+#userDropdownMenu a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+#userDropdownMenu a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -18,10 +68,27 @@
       <a href="#about-section">About</a>
     </nav>
 
-    <div class="icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-user"></i>
+  <div class="icons">
+
+  <i class="fas fa-search"></i>
+
+  <!-- LOGIN ICON -->
+  <a href="login.html" id="loginIcon" style="color:white;">
+    <i class="fas fa-user"></i>
+  </a>
+
+  <!-- USER LOGIN -->
+  <div id="userHeader" style="display:none; position:relative;">
+    <span id="userNameHeader"></span>
+
+    <div id="userDropdownMenu">
+      <a href="#" id="logoutHeader">Logout</a>
     </div>
+  </div>
+
+</div>
+
+
 
     <div class="menu-toggle" id="menuToggle">&#9776;</div>
   </div>
@@ -73,11 +140,15 @@
   <!-- COMING SOON -->
   <section id="coming-soon-section" class="coming-soon-section">
   <div class="section-box1"></div>
-</section>
-
-</section>
-
-      <!-- tambahkan item lainnya -->
+  </section>
+  </section>
+  <section id="coming-soon-section" class="coming-soon-section">
+  <div class="section-box2"></div>
+  </section>
+  <section id="coming-soon-section" class="coming-soon-section">
+  <div class="section-box3"></div>
+  </section>
+  <!-- tambahkan item lainnya -->
     </div>
   </div>
 </section>
@@ -110,5 +181,58 @@
     mainNav.classList.toggle("active");
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const userData = JSON.parse(localStorage.getItem("user_aktif"));
+
+    const loginIcon = document.getElementById("loginIcon");
+    const userHeader = document.getElementById("userHeader");
+    const userNameHeader = document.getElementById("userNameHeader");
+    const dropdownMenu = document.getElementById("userDropdownMenu");
+    const logoutBtn = document.getElementById("logoutHeader");
+
+    // =========================
+    // USER SUDAH LOGIN
+    // =========================
+    if (isLoggedIn === "true" && userData) {
+      loginIcon.style.display = "none";
+      userHeader.style.display = "inline-block";
+      userNameHeader.textContent = userData.username;
+    }
+
+    // =========================
+    // TOGGLE DROPDOWN
+    // =========================
+    userNameHeader.addEventListener("click", function () {
+      dropdownMenu.style.display =
+        dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // =========================
+    // LOGOUT
+    // =========================
+    logoutBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("user_aktif");
+      window.location.href = "index.html";
+    });
+
+    // =========================
+    // KLIK LUAR = TUTUP
+    // =========================
+    document.addEventListener("click", function (e) {
+      if (!userHeader.contains(e.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+
+  });
+</script>
+
+
 </body>
 </html>
